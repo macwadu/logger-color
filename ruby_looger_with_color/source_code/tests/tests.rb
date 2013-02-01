@@ -1,10 +1,19 @@
 require '../lib/logger_color'
 
 class Tests
-  LOG.info("Test")
-  LOG.warn("Test")
-  LOG.debug("Test")
-  LOG.unknown("Test")
+
+
+
+	 
+def self.t
+
+	  LOG.info("Test")
+	  LOG.warn("Test")
+	  LOG.debug("Test")
+	  LOG.unknown("Test")
+end
 
 
 end
+
+Tests.t
