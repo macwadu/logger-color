@@ -5,7 +5,7 @@ class Log < Logger
 
   def format_message(severity, timestamp, progname, msg)
     if severity == 'DEBUG'
-      "#{Time.now.strftime('%Y-%m-%d %X')} [#{severity}][#{self.calling_method}][#{self.line_calling_method}] ::#{msg}\n".blue
+      "#{Time.now.strftime('%Y-%m-%d %X')} [#{severity}][#{self.calling_method}][#{self.line_calling_method}] ::#{msg}\n"
     elsif severity == 'WARN'
       "#{Time.now.strftime('%Y-%m-%d %X')} [#{severity}][#{self.calling_method}][#{self.line_calling_method}] ::#{msg}\n".magenta.bold
     elsif severity == 'INFO'
