@@ -1,19 +1,25 @@
 require '../lib/logger_color'
 
-class Tests
+describe "logger_color's", 'log levels' do
+  before(:each) do
+    LOG = Log.new(STDOUT)
+    LOG.datetime_format = '%Y-%m-%d %X' # simplify time output
+    LOG.level = Log::DEBUG
+  end
 
+  it 'info log' do
+    LOG.info('Test')
+  end
 
+  it 'warn log' do
+    LOG.warn('Test')
+  end
 
-	 
-def self.t
+  it 'debug log' do
+    LOG.debug('Test')
+  end
 
-	  LOG.info("Test")
-	  LOG.warn("Test")
-	  LOG.debug("Test")
-	  LOG.unknown("Test")
+  it 'error log' do
+    LOG.error('Test')
+  end
 end
-
-
-end
-
-Tests.t
