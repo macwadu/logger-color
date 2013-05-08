@@ -1,4 +1,4 @@
-logger_color - Uses ruby gem logger and add it color
+logger_color - Uses ruby gem logger and add it color  https://travis-ci.org/macwadu/macwadu.png
 
 
 Uses logger from ruby and add color to the logs
