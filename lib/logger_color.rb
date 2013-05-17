@@ -3,19 +3,22 @@ require 'colored'
 
 class Log < Logger
 
-  def format_message(severity, timestamp, progname, msg)
-    if severity == 'DEBUG'
-      "#{Time.now.strftime('%Y-%m-%d %X')} [#{severity}][#{self.calling_method}][#{self.line_calling_method}] ::#{msg}\n"
-    elsif severity == 'WARN'
-      "#{Time.now.strftime('%Y-%m-%d %X')} [#{severity}][#{self.calling_method}][#{self.line_calling_method}] ::#{msg}\n".magenta.bold
-    elsif severity == 'INFO'
-      "#{Time.now.strftime('%Y-%m-%d %X')} [#{severity}][#{self.calling_method}][#{self.line_calling_method}] :: #{msg}\n".green.bold
-    elsif severity == 'ERROR'
-      "#{Time.now.strftime('%Y-%m-%d %X')} [#{severity}][#{self.calling_method}][#{self.line_calling_method}] ::#{msg}\n".red.bold
-    elsif severity == 'FATAL'
-      "#{Time.now.strftime('%Y-%m-%d %X')} [#{severity}][#{self.calling_method}][#{self.line_calling_method}] ::#{msg}\n".black.blue.to_eol.bold
-    else
-      "#{Time.now.strftime('%Y-%m-%d %X')} [#{severity}][#{self.calling_method}][#{self.line_calling_method}] ::#{msg}\n".blue
+  def format_message(severity, msg)
+    string = "#{Time.now.strftime('%Y-%m-%d %X')} [#{severity}][#{self.calling_method}][#{self.line_calling_method}] ::#{msg}\n"
+
+    case severity
+      when 'DEBUG'
+        string
+      when 'WARN'
+        string.magenta.bold
+      when 'INFO'
+        string.green.bold
+      when 'ERROR'
+        string.red.bold
+      when 'FATAL'
+        string.black.blue.to_eol.bold
+      else
+        string.blue
     end
 
   end
