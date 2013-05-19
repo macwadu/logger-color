@@ -1,6 +1,6 @@
-require '../lib/logger_color'
+require '../lib/logger-color'
 
-describe "logger_color's", 'log levels' do
+describe "logger-color's", 'log levels' do
   before(:each) do
     LOG = Log.new(STDOUT)
     LOG.datetime_format = '%Y-%m-%d %X' # simplify time output
