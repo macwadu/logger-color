@@ -3,8 +3,10 @@ require 'colored'
 
 class Log < Logger
 
-  def format_message(severity, msg)
-    string = "#{Time.now.strftime('%Y-%m-%d %X')} [#{severity}][#{self.calling_method}][#{self.line_calling_method}] ::#{msg}\n"
+  #format_severity(severity), Time.now, progname, message)
+  def format_message(severity ,time=Time.now.strftime('%Y-%m-%d %X') ,progname, message)
+
+    string = "#{time} [#{severity}][#{self.calling_method}][#{self.line_calling_method}] ::#{message}\n"
 
     case severity
       when 'DEBUG'

@@ -1,11 +1,13 @@
 require '../lib/logger-color'
 
+LOG = Log.new(STDOUT)
+LOG.datetime_format = '%Y-%m-%d %X' # simplify time output
+LOG.level = Log::DEBUG
+
 describe "logger-color's", 'log levels' do
-  before(:each) do
-    LOG = Log.new(STDOUT)
-    LOG.datetime_format = '%Y-%m-%d %X' # simplify time output
-    LOG.level = Log::DEBUG
-  end
+  #before(:each) do
+  #
+  #end
 
   it 'info log' do
     LOG.info('Test')
